@@ -4,6 +4,7 @@ import useAuth from '../../Hooks/useAuth';
 
 const PrivateRoute = ({children, ...rest}) => {
     const { user, isLoading } = useAuth();
+
     if(isLoading) {
         return <h1>Alifa Heart Foundation</h1>
     }
@@ -18,7 +19,7 @@ const PrivateRoute = ({children, ...rest}) => {
             }}
         />
         
-    }
+        }
         >
             
         </Route>

@@ -1,5 +1,6 @@
 import React from 'react';
 import LatestServices from '../../LatestServices/LatestServices';
+import Services from '../../Services/Services';
 // import Carousel from '../Carousel/Carousel';
 import './Home.css';
 
@@ -8,7 +9,8 @@ const Home = () => {
         <div>
             <div className="grid-rows-3">
                 {/* <Carousel /> */}
-                <LatestServices />
+                {/* <LatestServices /> */}
+                <Services />
             </div>
         </div>
     );

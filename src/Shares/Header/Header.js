@@ -1,16 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
-import UserInfoModal from '../../Pages/UserInfoModal/UserInfoModal';
+import UserInfoModal from '../../Pages/Users/UserInfoModal/UserInfoModal';
 import './Header.css';
 
 const Header = () => {
+    const [toggle, setToggle] = useState(false)
     const { user, logout } = useAuth();
-    const [modalIsOpen, setIsOpen] = useState(false);
 
-    function openModal() {
-        setIsOpen(true);
-    }
     return (
         <div className="bg-gray-500 p-8 text-white">
             <div className="container flex items-center">
@@ -27,7 +24,7 @@ const Header = () => {
                         {
 
                         user?.photoURL ?
-                        <img onClick={openModal} className="w-10 circle rounded-full mr-2" src={  user.photoURL} alt=""/> 
+                        <img onClick={() => setToggle(true)} className="w-10 circle rounded-full mr-2 border-2 border-white" src={  user.photoURL} alt=""/> 
                         :
                         user.photoURL === false &&
                         <div className="bg-gray-200 text-green-500 w-10 h-10 flex items-center text-xl mr-2 justify-center rounded-full">{user.displayName[0]}</div>}
@@ -38,7 +35,7 @@ const Header = () => {
                         }
                     </div>
             </div>
-            <UserInfoModal modalIsOpen={modalIsOpen}  setIsOpen={ setIsOpen } />
+            <UserInfoModal  setToggle={ setToggle } toggle={toggle} />
         </div>
     );
 };
