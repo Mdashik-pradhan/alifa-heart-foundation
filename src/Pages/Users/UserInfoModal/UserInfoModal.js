@@ -2,6 +2,8 @@ import React from 'react';
 import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 
 
 
@@ -21,7 +23,7 @@ const UserInfoModal = (props) => {
             {
                 toggle?
 
-                <div className="w-60 p-3 rounded-md  bg-green-100 z-50">
+                <div className="w-60 p-3 rounded-md bg-white border border-black z-50">
                 <div className="text-right">
                     <button className="bg-red-500 w-8 h-8 rounded text-white font-semibold" onClick={() => setToggle(false)}>X</button>
                 </div>
@@ -31,7 +33,7 @@ const UserInfoModal = (props) => {
                         <div>
                             <h3 className="font-semibold m-2">{user.displayName}</h3>
                             <Link onClick={() => setToggle(false)} to="/user" className="bg-yellow-600 px-3 py-1 text-white rounded border-2 border-white">View Profile</Link>
-                            <button className="block mx-auto font-bold m-3" onClick={logout}>Log Out</button>
+                            <button className="block mx-auto font-bold m-3" onClick={logout}><FontAwesomeIcon icon={faSignOutAlt}/> Log Out</button>
                             {!user.email && redirectToLogin()}
                         </div>
                     </div>

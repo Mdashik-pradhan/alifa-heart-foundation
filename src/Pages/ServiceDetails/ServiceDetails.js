@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import useService from '../../Hooks/useService';
 import './ServiceDetails.css';
 
 const ServiceDetails = () => {
-    const { services } = useService();
+    const [service, setService] = useState();
     const { _id } = useParams();
-    const matchId = parseFloat(_id)
-    const service = services.map(service => service);
-    const matchService = service.find(service => service._id === matchId);
-    console.log(matchService)
+    // useEffect(() => {
+    //     fetch('./fakeData.JSON')
+    //     .then(res => res.json())
+    //     .then(data => console.log(data))
+    // }, [])
+    // const matchService = service.map(service => service._id === _id)
+    // console.log(matchService)
     return (
         <div>
 

@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 import UserInfoModal from '../../Pages/Users/UserInfoModal/UserInfoModal';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 import './Header.css';
 
 const Header = () => {
@@ -9,10 +11,10 @@ const Header = () => {
     const { user, logout } = useAuth();
 
     return (
-        <div className="bg-gray-500 p-8 text-white">
+        <div className="bg-blue-500 p-8 text-white">
             <div className="container flex items-center">
                 <div>
-                    Alifa Heart Foundation
+                    <h1 className="text-2xl font-semibold">Alifa Heart Foundation</h1>
                 </div>
                 <div className="flex mx-auto">
                     <Link className="p-2" to="/">Home</Link>
@@ -30,7 +32,9 @@ const Header = () => {
                         <div className="bg-gray-200 text-green-500 w-10 h-10 flex items-center text-xl mr-2 justify-center rounded-full">{user.displayName[0]}</div>}
 
                         {
-                            user?.email?  <button onClick={logout}>Log out</button> 
+                            user?.email? <button onClick={
+                                logout
+                            } > <FontAwesomeIcon icon={faSignOutAlt}/> Log out</button >
                             : <Link to="/login">Login</Link>
                         }
                     </div>
