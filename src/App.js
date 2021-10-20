@@ -11,6 +11,8 @@ import RegisterPage from './Pages/RagisterPage/RegiserPage/RegisterPage';
 import AuthProvider from './Context/AuthProvider';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 import User from './Pages/Users/User/User';
+import Contact from './Pages/Home/Contact/Contact';
+import NotFound from './Pages/NotFound/NotFound';
 
 function App() {
   return (
@@ -27,11 +29,14 @@ function App() {
           <PrivateRoute path="/services">
             <Services />
           </PrivateRoute>
-          <PrivateRoute path="/serviceDetails/:_id">
+          <Route path="/serviceDetails/:_id">
             <ServiceDetails />
-          </PrivateRoute>
+          </Route>
           <Route path="/about">
             <About />
+          </Route>
+          <Route path="/contact">
+            <Contact />
           </Route>
           <Route path="/login">
             <LoginPage />
@@ -42,6 +47,9 @@ function App() {
           <PrivateRoute path="/user">
             <User />
           </PrivateRoute>
+          <Route path="*">
+            <NotFound />
+          </Route>
         </Switch>
         <Footer />
       </Router>

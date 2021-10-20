@@ -11,22 +11,22 @@ const Header = () => {
     const { user, logout } = useAuth();
 
     return (
-        <div className="bg-blue-500 p-8 text-white">
+        <div className="shadow-lg p-8 text-black">
             <div className="container flex items-center">
                 <div>
                     <h1 className="text-2xl font-semibold">Alifa Heart Foundation</h1>
                 </div>
                 <div className="flex mx-auto">
-                    <Link className="p-2" to="/">Home</Link>
-                    <Link className="p-2" to="/services">Services</Link>
-                    <Link className="p-2" to="/about">About</Link>
-                    <Link className="p-2" to="/contact">Contact</Link>
+                    <Link className="p-2 hover:no-underline text-lg font-semibold hover:text-red-300 hover:border-t-2 border-black" to="/">Home</Link>
+                    <Link className="p-2 hover:no-underline text-lg font-semibold hover:text-red-300 hover:border-t-2 border-black" to="/services">Services</Link>
+                    <Link className="p-2 hover:no-underline text-lg font-semibold hover:text-red-300 hover:border-t-2 border-black" to="/about">About</Link>
+                    <Link className="p-2 hover:no-underline text-lg font-semibold hover:text-red-300 hover:border-t-2 border-black" to="/contact">Contact</Link>
                 </div>
                     <div className = "flex justify-end text-end">
                         {
 
                         user?.photoURL ?
-                        <img onClick={() => setToggle(true)} className="w-10 circle rounded-full mr-2 border-2 border-white" src={  user.photoURL} alt=""/> 
+                        <img onClick={() => setToggle(true)} className="w-10 circle rounded-full mr-2 border-2 border-white" src={user.photoURL} alt=""/> 
                         :
                         user.photoURL === false &&
                         <div className="bg-gray-200 text-green-500 w-10 h-10 flex items-center text-xl mr-2 justify-center rounded-full">{user.displayName[0]}</div>}

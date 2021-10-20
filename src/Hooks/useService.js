@@ -1,5 +1,7 @@
-import { useState, useEffect} from 'react';
+import { useState, useEffect, useContext} from 'react';
 import { useHistory } from 'react-router';
+import { AuthContext } from '../Context/AuthProvider';
+import useAuth from './useAuth';
 
 const useService = () => {
     const [services, setServices] = useState([]);
@@ -11,9 +13,8 @@ const useService = () => {
      }, []);
 
     //  to go service details page
-     const handleDetails = (id) => {
+     const handleDetails = id => {
         history.push(`/serviceDetails/${id}`);
-        console.log(id)
      };
 
     return {
