@@ -1,10 +1,15 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useHistory } from 'react-router';
 import useAuth from '../../../Hooks/useAuth';
 
 const BookAppointment = () => {
      const { register, handleSubmit,  formState: { errors } } = useForm();
-     const onSubmit = data => console.log(data);
+    const history = useHistory();
+     const onSubmit = data => {
+        history.push('/')
+     };
+
     const { user } = useAuth();
     const { displayName, phone, email } = user;
     return (

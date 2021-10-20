@@ -18,12 +18,12 @@ const ServiceDetails = () => {
          const serviceDetails = service.find(service => service._id === idInNumber);
 
     return (
-        <div className="md:m-20 m-1">
-            <div className="flex bg-gray-800 ">
+        <div className="container mb-10 mt-10">
+            <div className="md:flex mx-auto text-white mb-28 border border-gray-300 rounded-lg">
                 <div className="">
-                    <img className="h-80" src={serviceDetails?.img} alt="" />
+                    <img className="w-full" src={serviceDetails?.img} alt="" />
                 </div>
-                <div className="">
+                <div className="bg-gray-800 w-full">
                     <h2>{serviceDetails?.serviceName}</h2>
                     <h2>{serviceDetails?.doctor}</h2>
                 </div>

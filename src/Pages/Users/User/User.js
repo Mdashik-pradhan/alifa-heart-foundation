@@ -8,7 +8,7 @@ const User = () => {
         <div>
             <div className="container md:w-2/3 sm:w-2/3 bg-gray-200 shadow mx-auto mt-10 mb-20">
                 <div className="w-full h-40 bg-gray-500 flex items-center justify-center">
-                    <h1 className="text-white">{user?.displayName[0]}</h1>
+                    <h1 className="text-white">{user?.displayName?.[0]}</h1>
                 </div>
                 <div className="flex justify-center items-center mb-5">
                     <img className='rounded-full mt-3 border-4 border-white' src={user?.photoURL} alt="" />

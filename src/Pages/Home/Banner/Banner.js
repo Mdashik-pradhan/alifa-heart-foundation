@@ -11,7 +11,7 @@ const Banner = () => {
         <div>
             <Carousel>
                 <Carousel.Item>
-                    <img
+                    <img style={{height: '600px'}} 
                     className="d-block w-100 h-120 "
                     src={banner1}
                     alt="First slide"
@@ -22,7 +22,7 @@ const Banner = () => {
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <img
+                    <img style={{height: '600px'}}
                     className="d-block w-100 h-120 "
                     src={banner2}
                     alt="Second slide"
@@ -34,14 +34,14 @@ const Banner = () => {
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <img
+                    <img style={{height: '600px'}}
                     className="d-block w-100 h-120 "
                     src={banner3}
                     alt="Third slide"
                     />
 
                     <Carousel.Caption className="">
-                        <h3 className="text-2xl text-black">Our Doctor Team</h3>
+                        <h3 className="text-2xl">Our Doctor Team</h3>
                         <p className="text-white text-lg">We are a multidisciplinary team of doctors, nurses and administrators. Together we aim to provide you with comprehensive healthcare that is tailored to your individual needs, in an environment that is caring, safe and welcoming.</p>
                     </Carousel.Caption>
                 </Carousel.Item>

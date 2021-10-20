@@ -6,7 +6,12 @@ const PrivateRoute = ({children, ...rest}) => {
     const { user, isLoading } = useAuth();
 
     if(isLoading) {
-        return <h1>Alifa Heart Foundation</h1>
+    
+        return (
+            <div className="h-screen bg-black text-center flex  pt-40 justify-center">
+                <h1 className="text-2xl font-semibold text-white">Alifa Heart Foundation...</h1>
+            </div>
+        )
     }
     
     return (
